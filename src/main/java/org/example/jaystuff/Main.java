@@ -42,7 +42,8 @@ public class Main {
             transaction.begin();
 
             // Part 1D - Insert
-            entityManager.persist(student1); // IMPORTANT!
+            entityManager.persist(student1);
+        // IMPORTANT!
 
 
             // Part 2a - Find (by ID)
@@ -50,9 +51,9 @@ public class Main {
 //            System.out.println(student.getName());
 
             // Part 2b - Find (with native query) (please note the strange HQL syntax)
-//            TypedQuery<Student> studentResult = entityManager.createQuery("select S from Student S where S.id " +
-//                            "= 1",
-//                    Student.class);
+            TypedQuery<Student> studentResult = entityManager.createQuery("select S from Student S where S.id " +
+                            "= 1",
+                    Student.class);
 //            Student student = studentResult.getResultList().get(0);
 //            System.out.println(student.getName());
             // Part 3 - Update

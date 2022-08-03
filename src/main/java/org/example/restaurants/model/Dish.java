@@ -14,4 +14,5 @@ import javax.persistence.Table;
 public class Dish {
     @Id
     private int id;
+    private String name;
 }
