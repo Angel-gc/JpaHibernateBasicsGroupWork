@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Restaurant {
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
-    private int id;
+    private long id;
     private String name;
     private String location;
     private int review;
