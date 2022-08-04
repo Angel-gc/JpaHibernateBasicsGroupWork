@@ -73,16 +73,25 @@ public class RestaurantRepository implements Repository<Restaurant> {
         res3.setLocation("Midtown");
         res3.setReview(5);
         if (find("NAME", res1.getName()) == null){
-            res1.setDishes(List.of(new Dish("penne vodka", 20, "tastes like heaven", 1, res1)));
+            Dish dish = new Dish("Fried Calamari", 50, "this is chewy but GOOD", 5, res2);
+            res1.setDishes(List.of(dish));
+            dish.setRestaurant(res1);
             entityManager.persist(res1);
+            entityManager.persist(dish);
         }
         if (find("NAME", res2.getName()) == null){
-            res2.setDishes(List.of(new Dish("Fried Calamari", 50, "this is chewy but GOOD", 5, res2)));
+            Dish dish = new Dish("Fried Calamari", 50, "this is chewy but GOOD", 5, res2);
+            res2.setDishes(List.of(dish));
+            dish.setRestaurant(res2);
          entityManager.persist(res2);
+         entityManager.persist(dish);
         }
         if (find("NAME", res3.getName()) == null){
-            res3.setDishes(List.of(new Dish("Durian soup", 100, "tastes like vomit", 0,  res3)));
+            Dish dish = new Dish("Durian soup", 100, "tastes like vomit", 0,  res3);
+            res3.setDishes(List.of(dish));
+            dish.setRestaurant(res3);
            entityManager.persist(res3);
+           entityManager.persist(dish);
         }
         transaction.commit();
     }
