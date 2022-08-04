@@ -22,6 +22,8 @@ public class RestaurantsMain {
     private static RestaurantRepository restaurantRepo = new RestaurantRepository();
     public static void main(String[] args) throws Exception {
         UserOutputService userOutputService = new ConsoleUserOutputServiceImpl();
+        restaurantRepo.setProps();
+
         try (UserInputService userInputService = new ConsoleUserInputServiceImpl(userOutputService)) {
 
             while(true) {
@@ -59,6 +61,7 @@ public class RestaurantsMain {
             }
         }
     }
+
 //    public static void printOption(String column, String value){
 //        System.out.println("Here is the restaurant you searched for: " + restaurantRepo.find(column, value));
 //    }

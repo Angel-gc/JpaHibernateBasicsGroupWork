@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -27,16 +29,8 @@ public class Restaurant {
             this.review = 0;
         } else this.review = Math.min(review, 5);
     }
-//    public Restaurant(String name, String location, String reviewString) {
-//        this.name = name;
-//        this.location = location;
-//        int review = Integer.valueOf(reviewString);
-//        if (review < 0 || review > 5){
-//            this.review = 0;
-//        }
-//        else {
-//            this.review = review;
-//        }
-//    }
+
+    @OneToMany(mappedBy = "restaurant")
+    List<Dish> dishes = new ArrayList<>();
 
 }
